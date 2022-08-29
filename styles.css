@@ -1,0 +1,188 @@
+
+
+:root {
+    --color-fondo: #333;
+    --color--fuente: #fff;
+    --fuente-primaria: 'Alumni Sans Collegiate One', sans-serif;
+    --fuente-texto:'Qwitcher Grypen', cursive;
+}
+
+body{
+    
+    background-color: var(--color-fondo);
+  /* position: relative; */
+    /* padding-bottom: 30px; */
+
+   
+}
+
+.navegacion{
+    width: 1000px;
+    margin: 30px auto;
+    background-color: var(--color--fuente);
+    border-radius: 15px 15px;
+    box-shadow: 10px 10px ;
+}
+
+.navegacion ul{
+    list-style: none;
+}
+.menu > li{
+    position: relative;
+    display: inline-block;
+}
+
+.menu > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: #353535;
+    font-family:var(--fuente-primaria);
+    text-decoration: none;
+}
+
+.menu li a:hover{
+    color: #ce7d35;
+    transition: all 0.3s;
+    
+}
+/* SUBMENU */
+.submenu{
+    position: absolute;
+    background-color: var(--color-fondo);
+    width: 130px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1.5s;
+}
+
+.submenu li a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    font-family:'Open sans';
+    text-decoration: none;
+}
+
+.menu li:hover .submenu{
+visibility: visible;
+opacity: 1;
+}
+
+.contenido{
+    color: var(--color--fuente);
+    text-align: center;
+    font-size: 30px;
+    font-family: var(--fuente-texto);
+}
+
+.redes{
+    margin: 30px auto;
+    
+}
+.redes li{
+    margin: 0 1px;
+    position:relative;
+    display: inline-block;
+}
+
+
+
+img{
+    height: 100px; 
+    
+    width: 50px;
+   
+    
+}
+
+
+.footer{
+    display: block;
+    font-family: var(--fuente-texto);
+    text-align: center;
+    background-color:#fff;
+    font-size: 20px;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0;
+    border-radius: 10px 10px;
+
+}
+              
+
+/* RESPONSIVE CELULARES*/
+@media (max-width:320px) {
+    
+}
+@media (max-width:375px) {
+    .navegacion{
+        width: auto;
+    }
+}
+@media (max-width:412px){
+}
+@media (max-width:414px) {
+    .navegacion{
+        width: auto;
+    }
+   
+    .redes li{
+        margin: 40px 0;
+    }
+    .footer{
+        
+        position: relative;
+    }
+}
+@media (max-width:425px) {
+.navegacion{
+    width: auto;
+}
+h1{
+    margin: 10px 0;
+}
+p{
+    margin: 5px 0;
+}
+.footer{position: relative;}
+    
+}
+@media (max-width:768px) {
+    .navegacion{
+        width: auto;
+    }
+   
+}
+@media (max-width: 820) {
+    .navegacion{
+        width: auto;
+    }
+    h1{
+        margin: 10px 0;
+    }
+    p{
+        margin: 10px 0;
+    }
+    .redes li{
+        margin: 30px 0;
+    }
+  
+    .footer{
+        width: auto;
+    }
+}
+@media (max-width: 912px){
+    .navegacion{
+        width: auto;
+    }
+    .contenido{
+        width: auto;
+    }
+    .contenido p{
+        margin: 10px 0;
+    }
+    .redes li{
+        margin: 20px 0;
+    }
+}

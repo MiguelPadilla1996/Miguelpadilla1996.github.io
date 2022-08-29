@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="/encriptador.css">
+    <title>Encriptador de mensajes</title>
+</head>
+<body>
+    <main class="contedenor-main">
+        <section class="logo">
+          <img src="/imagenes/Logo.svg" alt="logo-alura">
+        </section>
+        <section class="contenedor-datos">
+          <article class="texto">
+            <input id="input" class="input" name="text" type="text" placeholder="Ingresa un mensaje" >
+            <p class="texto-error">El campo no puede llevar acentos ni Mayusculas ni simbolos y no puede estar vacio.</p>
+          </article>
+          <article class="grupo-de-botones">
+            <div class="alerta">
+              <img src="/imagenes/exlamation.svg" class="info-icono" alt="icono">
+              <p class="text">Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="diseño-btns">
+              <button id="encriptar"  class="boton encriptar disab"> Encriptar</button>
+              <button id="descriptar"  class="boton desencriptar disab">  Desencriptar</button>
+            </div>
+          </article>
+        </section>
+        <section class="salida">
+          <article class="mensaje-carta" id="mensaje-carta">
+            <div class="carta" id="carta">
+              <img class="message-img" src="/imagenes/Muñeco.svg" alt="mensaje"> 
+              <h4 class="titulo-mensaje">Ningún mensaje fue encontrado
+              <p class="descripción">Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+          </article>
+    
+          <article class="mensaje" id="respuesta">
+            <p class="mensaje-respuesta" id="mensaje-respuesta"></p>
+            <button class="boton boton-copiar" id="copiar"> </button>
+          </article>
+    
+        </section>
+      </main>
+
+      <script src="/encriptador.js"></script>
+    
+</body>
+</html>
