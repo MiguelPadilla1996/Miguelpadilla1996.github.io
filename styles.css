@@ -10,8 +10,8 @@
 body{
     
     background-color: var(--color-fondo);
-  /* position: relative; */
-    /* padding-bottom: 30px; */
+  /* position: relative;
+    padding-bottom: 30px; */
 
    
 }
@@ -127,13 +127,13 @@ form label, form legend{
 }
 
 .footer{
-    display: block;
+    
     font-family: var(--fuente-texto);
     text-align: center;
     background-color:#fff;
     font-size: 20px;
-    position:absolute;
-    margin-bottom: 10px;
+    /* position:absolute; */
+    margin-top:13%;
     width: 100%;
     padding: 5px 0;
     border-radius: 10px 10px;
