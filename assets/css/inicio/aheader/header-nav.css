@@ -1,0 +1,74 @@
+.header__nav__item-logo{
+    font-size: 2rem;
+    margin: 0;
+}
+.header__nav__item__form{
+    display: flex;
+    margin: 0 0 0 35vw;
+
+}
+.header__nav__item__form-input{
+    display: none;
+}
+.header__nav__item-login-txt{   
+    display: none;
+}
+.header__nav__item-login.icon__btn span:last-child{
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
+    .header__nav__item__form{
+        width: 40vw;
+        padding: 0 1rem 0;
+        margin: 0 15vw 0 0;
+        background-color: var(--iconBg);
+        border-radius: 2rem;
+        justify-content: space-between;
+    }
+    .header__nav__item__form-input{
+        display: initial;
+        border: none;
+        color: var(--productTitle);
+        background-color: var(--iconBg);
+    }
+    .header__nav__item-login.icon__btn{
+        width: auto;
+        border-radius: 0;
+        border: 2px solid var(--bgBtn);
+        padding-left: 2rem;
+    }
+    .header__nav__item-login.icon__btn a{
+        display: flex;
+        position: relative;
+    }
+    .header__nav__item-login.icon__btn span{
+        display: initial;
+        color: var(--bgBtn);
+        padding: 0 1rem;
+    }
+    .header__nav__item-login.icon__btn span:first-child{
+        position: absolute;
+        top: 50%;
+        left: -2rem;
+        transform: translateY(-50%);
+    }
+    .header__nav__item-login.icon__btn span:last-child{
+        display: initial;
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+}
+@media screen and (min-width: 992px) {
+    .header__nav__item__form{
+        width: 30vw;
+        max-width: 500px;
+        margin: 0 30vw 0 0;
+    }
+    .header__nav__item__form-input{
+        width: 90%;
+    }
+    .header__nav__item-login.icon__btn span{
+        padding: 0 2rem;
+    }
+}
