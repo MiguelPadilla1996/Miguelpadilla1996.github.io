@@ -1,3 +1,4 @@
+/* Variables */
 :root {
     --color-fondo: #1a1a1a;
     --color-fuente: #eaeaea;
@@ -8,14 +9,37 @@
     --fuente-texto: 'Press Start 2P', cursive; /* Fuente pixelada */
 }
 
+/* Estilo general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--color-fondo);
     color: var(--color-fuente);
     font-family: var(--fuente-texto);
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column; /* Coloca el contenido en columna */
+    min-height: 100vh; /* Asegura altura mínima de la página */
+    background-image: url('/imagenes/Fondo.jpeg'); /* Reemplaza con la ruta de tu imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--color-fuente);
+    font-family: var(--fuente-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+main {
+    flex: 1; /* El contenido principal ocupa el espacio disponible */
+}
+
+/* Navegación */
 .navegacion {
     max-width: 1000px;
     margin: 30px auto;
@@ -24,6 +48,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(20, 255, 236, 0.5), inset 0 0 10px rgba(20, 255, 236, 0.3);
     padding: 0 20px;
+    
+    text-align: center;
 }
 
 .navegacion ul {
@@ -35,6 +61,7 @@ body {
 .menu > li {
     position: relative;
     display: inline-block;
+   
 }
 
 .menu > li > a {
@@ -73,7 +100,7 @@ body {
 }
 
 .menu li:hover .submenu {
-    display: block; /* Cambiado a 'display: block' para que aparezca el submenú */
+    display: block; 
 }
 
 .contenido {
@@ -84,6 +111,8 @@ body {
     text-shadow: 0 0 10px var(--color-acento);
     margin: 20px 0;
 }
+
+
 
 .redes {
     margin: 30px auto;
@@ -136,38 +165,14 @@ form label, form legend {
     transform: scale(1.05);
 }
 
+/* Footer */
 .footer {
     font-family: var(--fuente-texto);
     text-align: center;
     background-color: #222;
     color: var(--color-fuente);
     font-size: 1rem;
-    margin-top: 5%;
     width: 100%;
     padding: 10px;
     border-top: 2px solid var(--color-acento);
-}
-
-/* Efecto Neón en títulos */
-h1, h2, .neon {
-    color: var(--color-acento);
-    text-shadow: 0 0 5px rgba(20, 255, 236, 0.7), 0 0 10px rgba(20, 255, 236, 0.5);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .navegacion {
-        width: auto;
-        padding: 10px;
-    }
-    .menu > li {
-        display: block;
-    }
-    .contenido {
-        font-size: 1.5rem;
-    }
-    .footer {
-        font-size: 0.9rem;
-        padding: 10px;
-    }
 }
