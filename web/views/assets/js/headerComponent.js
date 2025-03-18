@@ -1,46 +1,27 @@
-class headerComponent extends HTMLElement{
-    constructor(){
-        super();
-    }
-
-    // Esto es lo que se va a ver dentro del componente
-    connectedCallback(){
-        this.innerHTML= `
-        <header class="header">
-            <nav class="header__nav">
-                <ul class="header__nav-container">
-                    <li class="header__nav__item">
-                    <a href="./index.html"><h1 class="header__nav__item-logo logo">CLOVER</h1></a>
-                    </li>
-                    <li class="header__nav__item">
-                        <form action="" class="header__nav__item__form">
-                            <input type="text" class="header__nav__item__form-input" placeholder="¿Qué deseas buscar?">
-                            <button type="submit" class="header__nav__item__form-submit icon__btn">
-                                <span class="material-icons-round">
-                                    search
-                                </span>
-                            </button>
-                        </form>
-                    </li>
-                    <li class="header__nav__item">
-                        <button class="header__nav__item-login icon__btn">
-                            <a href="./login.html">
-                                <span class="material-icons-round">
-                                    person
-                                </span>
-                                <span>
-                                    Login
-                                </span>
-                            </a>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        `;
-    }
-
-}
-
-// Con este codig la definimos como webComponent
-window.customElements.define("header-component", headerComponent);
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("header").innerHTML = `
+        <header class="cabezera">
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/sobremi.html">Sobre Mi</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+                <li><a href="#">Proyectos</a>
+                    <ul class="submenu">
+                        <li><a href="/encriptador.html" target="_blank">Encriptador de Mensajes</a></li>
+                        <li><a href="/ahorcado.html" target="_blank">Juego del Ahorcado</a></li>
+                        <li><a href="/tienda.html" target="_blank">Tienda Online</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Juegos</a>
+                <ul class="submenu">
+                    <li><a href="/acertar.html" >Tiro al Blanco</a></li>
+                    <li><a href="#"></a></li>
+                </ul></li>
+                <li><a href="/certificaciones.html">Mis Certificaciones</a></li>
+                <li><a href="/paginaestatica.html">Mi Pagina Estatica</a></li>
+            </ul>
+        </nav>
+    </header>
+    `;
+});
