@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="/encriptador.css">
+    <link rel="stylesheet" href="/web/views/assets/css/reset.css">
+    <link rel="stylesheet" href="/web/views/assets/css/styles.css">
+    <link rel="stylesheet" href="/web/views/assets/css/encriptador/encriptador.css">
     <title>Encriptador de mensajes</title>
 </head>
 <body>
+
+  <div id="header"></div>
     <main class="contedenor-main">
         <section class="logo">
-          <img src="/imagenes/Logo.svg" alt="logo-alura">
+          <img src="/web/views/assets/img/imagenes/Logo.svg" alt="logo-alura">
         </section>
         <section class="contenedor-datos">
           <article class="texto">
@@ -20,7 +23,7 @@
           </article>
           <article class="grupo-de-botones">
             <div class="alerta">
-              <img src="/imagenes/exlamation.svg" class="info-icono" alt="icono">
+              <img src="/web/views/assets/img/imagenes/exlamation.svg" class="info-icono" alt="icono">
               <p class="text">Solo letras minúsculas y sin acentos</p>
             </div>
             <div class="diseño-btns">
@@ -32,7 +35,7 @@
         <section class="salida">
           <article class="mensaje-carta" id="mensaje-carta">
             <div class="carta" id="carta">
-              <img class="message-img" src="/imagenes/Muñeco.svg" alt="mensaje"> 
+              <img class="message-img" src="/web/views/assets/img/imagenes/Muñeco.svg" alt="mensaje"> 
               <h4 class="titulo-mensaje">Ningún mensaje fue encontrado
               <p class="descripción">Ingresa el texto que desees encriptar o desencriptar</p>
             </div>
@@ -46,7 +49,12 @@
         </section>
       </main>
 
-      <script src="/encriptador.js"></script>
+      <div id="footer"></div> 
+
+      <script src="/web/views/modules/headerComponent.js"></script>
+      <script src="/web/views/modules/footerComponent.js"></script>
+
+      <script src="/web/views/assets/js/encriptador/encriptador.js"></script>
     
 </body>
 </html>
