@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="/reset.css">
+   <link rel="stylesheet" href="/styles.css">
+    <title>Mi portafolio</title>
+   
+<!-- EmailJS SDK v3 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+    emailjs.init("qH95FrZdzurR-zrkl");
+</script>
+
+</head>
+<body>
+    <header class="cabezera">
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="/index.html">Inicio</a></li>
+                <li><a href="/sobremi.html">Sobre Mi</a></li>
+                <li><a href="/contacto.html">Contacto</a></li>
+                <li><a href="#">Proyectos</a>
+                    <ul class="submenu">
+                        <li><a href="/encriptador.html" target="_blank">Encriptador de Mensajes</a></li>
+                        <li><a href="/ahorcado.html" target="_blank">Juego del Ahorcado</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Juegos</a>
+                    <ul class="submenu">
+                        <li><a href="/acertar.html" >Tiro al Blanco</a></li>
+                        <li><a href="#"></a></li></ul>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contenido">
+            <form class="formulario" action=""><label for="nombre">
+                <label for="nombreyapellido">Nombre y Apellido</label>
+            <input type="text" id="nombreyapellido" class="input-padron" required placeholder="Nombre y Apellido">
+
+            <label for="correoelectronico">Correo Electrónico</label>
+            <input type="email" id="correoelectronico" class="input-padron" required placeholder="email@dominio.com">
+
+            <label for="telefono">Telefono</label>
+            <input type="tel" id="telefono" class="input-padron" required placeholder="(XX) XXXX XXXX">
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" cols="70" rows="10" class="input-padron" required></textarea>
+
+            <fieldset>
+                <legend>¿Motivo por el cual quiere contactar me?</legend>
+
+                <label for="radio-colaboración"><input type="radio" name="contacto" value="colaboración" id="radio-colaboración" checked>
+                    Colaboración</label>
+
+
+                <label for="radio-proyecto"><input type="radio" name="contacto" value="proyecto" id="radio-proyecto">
+                    Realizar Un Proyecto</label>
+
+
+                <label for="radio-trabajo"><input type="radio" name="contacto" value="trabajo" id="radio-trabajo" >
+                    Contratar Para Un Trabajo</label>
+                    <label for="radio-otro"><input type="radio" name="contacto" value="otro" id="radio-otro" >
+                       Otro Motivo</label>
+
+            </fieldset>
+            <input type="submit" value="Enviar Formulario" class="enviar">
+        </form>
+        </section>
+    </main>
+    <footer class="footer" >
+        <p>&#9400:Derechos Reservados Miguel Angel Padilla Morales 2022</p>
+    </footer>
+
+    <script src="formulario.js"></script>
+</body>
+</html>
