@@ -50,6 +50,9 @@ body:not(.modo-claro) .btn-outline-secondary:hover {
   background-color: #f8f9fa;
   color: #212529;
 }
+body:not(.modo-claro) .navbar-brand {
+  color: #eaeaea;
+}
 
 /* === Modo Claro === */
 .modo-claro {
@@ -109,4 +112,19 @@ body:not(.modo-claro) .btn-outline-secondary:hover {
 .modo-claro .btn-outline-info:hover {
   background-color: #14b2ff;
   color: white;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.modo-claro section:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+/* Líneas divisorias entre secciones en modo claro */
+.modo-claro section {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 3rem;
+  margin-bottom: 2rem;
 }
