@@ -22,20 +22,59 @@ const proyectos = [
   }
 ];
 
-const container = document.getElementById("proyectos-container");
-proyectos.forEach(p => {
-  const col = document.createElement("div");
-  col.className = "col-md-6 mb-4";
-  col.innerHTML = `
-    <div class="card h-100 project-card">
-      <div class="card-body">
-        <h5 class="card-title">${p.titulo}</h5>
-        <p class="card-text">${p.descripcion}</p>
-        <a href="${p.enlace}" class="btn btn-outline-info" target="_blank">Ver más</a>
-      </div>
-    </div>`;
-  container.appendChild(col);
-});
+// Renderiza los proyectos si el contenedor existe
+function renderizarProyectos() {
+  const container = document.getElementById("proyectos-container");
+  if (!container) return;
+
+  container.innerHTML = "";
+  proyectos.forEach(p => {
+    const col = document.createElement("div");
+    col.className = "col-md-6 mb-4";
+    col.innerHTML = `
+      <div class="card h-100 project-card">
+        <div class="card-body">
+          <h5 class="card-title">${p.titulo}</h5>
+          <p class="card-text">${p.descripcion}</p>
+          <a href="${p.enlace}" class="btn btn-outline-info" target="_blank">Ver más</a>
+        </div>
+      </div>`;
+    container.appendChild(col);
+  });
+}
+
+// Carga contenido dinámico
+function cargarContenido(ruta) {
+  fetch(ruta)
+    .then(res => res.text())
+    .then(html => {
+      const temp = document.createElement("div");
+      temp.innerHTML = html;
+      const main = temp.querySelector("main");
+      if (main) {
+        document.getElementById("contenido").innerHTML = main.outerHTML;
+      } else {
+        document.getElementById("contenido").innerHTML = html;
+      }
+
+      aplicarModoAContenidoDinamico();
+      if (ruta.includes("inicio.html")) renderizarProyectos();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    })
+    .catch(err => console.error("Error al cargar el contenido:", err));
+}
+
+// Aplica modo claro/oscuro al contenido cargado
+function aplicarModoAContenidoDinamico() {
+  const contenido = document.getElementById("contenido");
+  if (contenido) {
+    if (document.body.classList.contains("modo-claro")) {
+      contenido.classList.add("modo-claro");
+    } else {
+      contenido.classList.remove("modo-claro");
+    }
+  }
+}
 
 // Mensaje de contacto
 function enviarMensaje() {
@@ -47,21 +86,53 @@ function enviarMensaje() {
 const toggleBtn = document.getElementById("modoToggle");
 const body = document.body;
 
-// Cambia el modo visual y guarda en localStorage
 function toggleModo() {
   const esClaro = body.classList.toggle("modo-claro");
   localStorage.setItem("modo", esClaro ? "claro" : "oscuro");
   toggleBtn.textContent = esClaro ? "Modo Oscuro" : "Modo Claro";
+  aplicarModoAContenidoDinamico();
 }
 
-// Aplica el modo guardado
 function aplicarModoGuardado() {
   const modoGuardado = localStorage.getItem("modo");
   const esClaro = modoGuardado === "claro";
   body.classList.toggle("modo-claro", esClaro);
   toggleBtn.textContent = esClaro ? "Modo Oscuro" : "Modo Claro";
+  aplicarModoAContenidoDinamico();
 }
 
-// Eventos
+// Evento DOM cargado
+document.addEventListener("DOMContentLoaded", () => {
+  aplicarModoGuardado();
+
+  // Construye el submenú dinámico
+  const submenuProyectos = [
+    { nombre: "Página Estática", enlace: "pages/paginaestatica/paginaestatica.html" },
+    { nombre: "API JWT", enlace: "pages/api.html" },
+    { nombre: "Compilador", enlace: "pages/compilador.html" },
+    { nombre: "Robot Arduino", enlace: "pages/robot.html" }
+  ];
+
+  const submenuContainer = document.getElementById("submenu-proyectos");
+
+  submenuProyectos.forEach(p => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.className = "dropdown-item";
+    a.href = "#";
+    a.textContent = p.nombre;
+
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      cargarContenido(p.enlace);
+    });
+
+    li.appendChild(a);
+    submenuContainer.appendChild(li);
+  });
+
+  // Carga por defecto el inicio
+  cargarContenido("pages/inicio.html");
+});
+
 toggleBtn.addEventListener("click", toggleModo);
-document.addEventListener("DOMContentLoaded", aplicarModoGuardado);

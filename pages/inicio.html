@@ -1,0 +1,79 @@
+<main>
+<!-- Hero -->
+<header class="text-center py-5 bg-accent">
+  <div class="container">
+    <h1 class="display-4">¡Hola! Soy Miguel Angel Padilla Morales</h1>
+    <p class="lead">Estudiante De Ingeniería En Sistemas. Apasionado Por El Desarrollo Web, Hardware y Desarrollo De Software.</p>
+  </div>
+</header>
+<div id="contenido-dinamico" class="container my-5"></div>
+<!-- Secciones -->
+<section id="proyectos" class="container py-5">
+  <h2 class="section-title">🧩 Proyectos destacados</h2>
+  <div class="row" id="proyectos-container"></div>
+</section>
+
+<section id="habilidades" class="bg-accent py-5">
+  <div class="container">
+    <h2 class="section-title">💡 Habilidades Técnicas</h2>
+    <div class="row">
+      <div class="col-md-4"><h5>Frontend</h5><span class="badge rounded-pill badge-tech">HTML</span><span class="badge rounded-pill badge-tech">CSS</span><span class="badge rounded-pill badge-tech">JavaScript</span><span class="badge rounded-pill badge-tech">Bootstrap</span></div>
+      <div class="col-md-4"><h5>Backend / API</h5><span class="badge rounded-pill badge-tech">PHP</span><span class="badge rounded-pill badge-tech">MariaDB / MySQL</span><span class="badge rounded-pill badge-tech">JWT</span><span class="badge rounded-pill badge-tech">REST API</span></div>
+      <div class="col-md-4"><h5>DevOps / Extras</h5><span class="badge rounded-pill badge-tech">XAMPP</span><span class="badge rounded-pill badge-tech">Git</span><span class="badge rounded-pill badge-tech">Nextcloud</span><span class="badge rounded-pill badge-tech">Postman</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="iot" class="container py-5">
+  <h2 class="section-title">🤖 Proyectos con Arduino</h2>
+  <p>He desarrollado proyectos con sensores como el HC-SR05, TCS3200, sensores de línea y motores con L293D. He creado robots que detectan objetos, siguen líneas, y se controlan mediante comunicación I²C entre múltiples placas Arduino.</p>
+</section>
+
+<section id="compiladores" class="bg-accent py-5">
+  <div class="container">
+    <h2 class="section-title">📘 Compiladores y ANTLR</h2>
+    <p>He trabajado en la conversión de código entre los lenguajes C y Java utilizando ANTLR 4.7.2. He desarrollado visitantes personalizados para traducir programas, analizadores léxicos y sintácticos, e integrado pseudocódigo y diagramas de flujo para mejorar la comprensión.</p>
+  </div>
+</section>
+
+<section id="contacto" class="container py-5">
+  <h2 class="section-title">📬 Contáctame</h2>
+  <form>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="nombre">
+    </div>
+    <div class="mb-3">
+      <label for="mensaje" class="form-label">Mensaje</label>
+      <textarea class="form-control" id="mensaje" rows="3"></textarea>
+    </div>
+    <button type="button" class="btn btn-outline-info" onclick="enviarMensaje()">Enviar</button>
+  </form>
+</section>
+
+<!-- Redes Sociales -->
+<section id="redes" class="py-5 bg-accent">
+  <div class="container text-center">
+    <h2 class="section-title">🌐 Mis Redes Sociales</h2>
+    <p>Sígueme y conoce más sobre mis proyectos y contenido técnico:</p>
+    <div class="d-flex justify-content-center gap-4 mt-4 flex-wrap">
+      <a href="https://youtube.com/@migueldevplay96" target="_blank" class="text-decoration-none red-social">
+        <i class="bi bi-youtube" style="font-size: 2rem;"></i>
+        <div>YouTube</div>
+      </a>
+      <a href="https://www.tiktok.com/@migueldevplay6" target="_blank" class="text-decoration-none red-social">
+        <i class="bi bi-tiktok" style="font-size: 2rem;"></i>
+        <div>TikTok</div>
+      </a>
+      <a href="https://github.com/Hero9696" target="_blank" class="text-decoration-none red-social">
+        <i class="bi bi-github" style="font-size: 2rem;"></i>
+        <div>GitHub</div>
+      </a>
+      <a href="https://www.linkedin.com/in/miguel-angel-padilla-morales-50a240246/" target="_blank" class="text-decoration-none red-social">
+        <i class="bi bi-linkedin" style="font-size: 2rem;"></i>
+        <div>LinkedIn</div>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
