@@ -1,0 +1,112 @@
+/* === Estilo base === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* === Modo Oscuro (por defecto) === */
+body {
+  background-color: #121212;
+  color: #eaeaea;
+}
+
+.bg-accent {
+  background-color: #1f1f1f;
+}
+
+.badge-tech {
+  background-color: #292929;
+  margin: 2px;
+}
+
+.project-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #eaeaea;
+}
+
+.navbar,
+footer {
+  background-color: #1a1a1a;
+  color: #eaeaea;
+}
+
+.navbar a.nav-link,
+footer p {
+  color: #eaeaea;
+}
+
+.navbar a.nav-link:hover {
+  color: #14ffec;
+}
+
+/* Botón modo oscuro */
+body:not(.modo-claro) .btn-outline-secondary {
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+body:not(.modo-claro) .btn-outline-secondary:hover {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* === Modo Claro === */
+.modo-claro {
+  background-color: #ffffff;
+  color: #212529;
+}
+
+.modo-claro .navbar,
+.modo-claro footer {
+  background-color: #ffffff;
+  color: #14b2ff;
+  border-color: #ddd;
+}
+
+.modo-claro .navbar a.nav-link,
+.modo-claro footer p {
+  color: #14b2ff;
+}
+
+.modo-claro .navbar a.nav-link:hover {
+  color: #0d6efd;
+}
+
+.modo-claro .bg-accent,
+.modo-claro .bg-black {
+  background-color: #ffffff;
+  color: #14b2ff;
+}
+
+.modo-claro .project-card {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  color: #212529;
+}
+
+.modo-claro .badge-tech {
+  background-color: #e0f7ff;
+  color: #14b2ff;
+}
+
+.modo-claro .btn-outline-secondary {
+  color: #14b2ff;
+  border-color: #14b2ff;
+}
+
+.modo-claro .btn-outline-secondary:hover {
+  background-color: #14b2ff;
+  color: white;
+}
+
+.modo-claro a,
+.modo-claro .btn-outline-info {
+  color: #14b2ff;
+  border-color: #14b2ff;
+}
+
+.modo-claro .btn-outline-info:hover {
+  background-color: #14b2ff;
+  color: white;
+}
