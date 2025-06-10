@@ -24,7 +24,7 @@ const proyectos = [
 
 // ================== Estilos por página ==================
 const estilosPorPagina = {
-  tienda: "assets/css/tienda/tienda.css",
+  paginaestatica: "assets/css/tienda/tienda.css",
   acertar: "assets/css/acertar/acertar.css",
   ahorcado: "assets/css/ahorcado/ahorcado.css"
 };

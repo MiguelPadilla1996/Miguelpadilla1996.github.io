@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+(function () {
   const canvas = document.querySelector("canvas");
   if (!canvas) {
     console.warn("🎯 Canvas no encontrado en el DOM.");
@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const ALTO = canvas.height || 400;
   const RADIO = 10;
   let xAleatorio = 0, yAleatorio = 0;
-
-  // === Funciones ===
 
   function dibujarCircunferencia(x, y, radio, color) {
     ctx.fillStyle = color;
@@ -42,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function disparar(evento) {
-    const rect = canvas.getBoundingClientRect(); // más preciso
+    const rect = canvas.getBoundingClientRect();
     const x = evento.clientX - rect.left;
     const y = evento.clientY - rect.top;
 
@@ -53,10 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
     alert(acierto ? "🎯 ¡Tiro certero!" : "💥 Fallaste");
   }
 
-  // === Inicialización ===
+  // Inicializar
   ctx.fillStyle = "lightgrey";
   ctx.fillRect(0, 0, ANCHO, ALTO);
-
   canvas.addEventListener("click", disparar);
   setInterval(actualizarPantalla, 2000);
-});
+
+  console.log("✅ acertar.js ejecutado correctamente");
+})();
