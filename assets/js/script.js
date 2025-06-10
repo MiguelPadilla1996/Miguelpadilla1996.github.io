@@ -25,7 +25,6 @@ const proyectos = [
 // ================== Estilos por página ==================
 const estilosPorPagina = {
   tienda: "assets/css/tienda/tienda.css",
-  paginaestatica: "assets/css/paginaestatica/paginaestatica.css",
   acertar: "assets/css/acertar/acertar.css",
   ahorcado: "assets/css/ahorcado/ahorcado.css"
 };
@@ -77,17 +76,23 @@ function cargarContenido(ruta) {
 
       aplicarModoAContenidoDinamico();
 
-      // ✅ Cargar CSS según clase
       if (main && main.classList.length > 0) {
         const clase = main.classList[0];
         cargarCSSDinamico(clase);
-        cargarScriptDinamico(clase); // ⬅️ aquí se carga el script si aplica
+        cargarScriptDinamico(clase);
+        console.log("📄 Clase del <main> detectada:", clase);
+      }
+
+      // 🔥 Aquí haz el render después de insertar el HTML dinámico
+      if (contenido.querySelector("#proyectos-container")) {
+        renderizarProyectos(); // Se ejecuta si el contenedor está presente
       }
 
       window.scrollTo({ top: 0, behavior: "smooth" });
     })
     .catch(err => console.error("Error al cargar el contenido:", err));
 }
+
 
 
 function cargarScriptDinamico(clase) {
@@ -130,6 +135,7 @@ function cargarCSSDinamico(clase) {
 
 // ================== Renderizar proyectos en la página de inicio ==================
 function renderizarProyectos() {
+  console.log("🛠 Renderizando proyectos...");
   const container = document.getElementById("proyectos-container");
   if (!container) return;
 
