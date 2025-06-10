@@ -1,4 +1,4 @@
-// Datos de proyectos
+// ================== Datos de proyectos ==================
 const proyectos = [
   {
     titulo: "Sistema de Inventario",
@@ -21,13 +21,114 @@ const proyectos = [
     enlace: "#"
   }
 ];
+
+// ================== Estilos por página ==================
 const estilosPorPagina = {
   tienda: "assets/css/tienda/tienda.css",
-  otro: "assets/css/"
+  paginaestatica: "assets/css/paginaestatica/paginaestatica.css",
+  acertar: "assets/css/acertar/acertar.css",
+  ahorcado: "assets/css/ahorcado/ahorcado.css"
 };
 
+// ================== Submenú dinámico ==================
+const submenuProyectos = [
+  { nombre: "Página Estática", enlace: "pages/paginaestatica/paginaestatica.html" },
+  { nombre: "Juego De Acertar", enlace: "pages/acertar/acertar.html" },
+  { nombre: "Juego De Ahorcado", enlace: "pages/ahorcado/ahorcado.html" },
+  { nombre: "Robot Arduino", enlace: "pages/robot.html" }
+];
 
-// Renderiza los proyectos si el contenedor existe
+function construirSubmenuProyectos() {
+  const submenuContainer = document.getElementById("submenu-proyectos");
+  if (!submenuContainer) return;
+
+  submenuContainer.innerHTML = "";
+
+  submenuProyectos.forEach(p => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.className = "dropdown-item";
+    a.href = "#";
+    a.textContent = p.nombre;
+
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      cargarContenido(p.enlace);
+    });
+
+    li.appendChild(a);
+    submenuContainer.appendChild(li);
+  });
+}
+
+// ================== Cargar contenido dinámico ==================
+// Ya no vuelvas a llamar a construirSubmenuProyectos dentro de cargarContenido
+// porque el menú ya se construyó en el HTML principal
+function cargarContenido(ruta) {
+  fetch(ruta)
+    .then(res => res.text())
+    .then(html => {
+      const temp = document.createElement("div");
+      temp.innerHTML = html;
+
+      const main = temp.querySelector("main");
+      const contenido = document.getElementById("contenido");
+      contenido.innerHTML = main ? main.outerHTML : html;
+
+      aplicarModoAContenidoDinamico();
+
+      // ✅ Cargar CSS según clase
+      if (main && main.classList.length > 0) {
+        const clase = main.classList[0];
+        cargarCSSDinamico(clase);
+        cargarScriptDinamico(clase); // ⬅️ aquí se carga el script si aplica
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    })
+    .catch(err => console.error("Error al cargar el contenido:", err));
+}
+
+
+function cargarScriptDinamico(clase) {
+  const scriptId = "script-dinamico";
+  const anterior = document.getElementById(scriptId);
+  if (anterior) anterior.remove();
+
+  const scriptsPorPagina = {
+    acertar: "assets/js/acertar.js",
+    ahorcado: "assets/js/ahorcado.js"
+  };
+
+  const rutaScript = scriptsPorPagina[clase];
+  if (!rutaScript) return;
+
+  const script = document.createElement("script");
+  script.id = scriptId;
+  script.src = rutaScript;
+  script.defer = true;
+  document.body.appendChild(script);
+}
+
+
+
+// ================== Cargar CSS dinámico ==================
+function cargarCSSDinamico(clase) {
+  const cssId = "css-dinamico";
+  const cssAnterior = document.getElementById(cssId);
+  if (cssAnterior) cssAnterior.remove();
+
+  const rutaCSS = estilosPorPagina[clase];
+  if (!rutaCSS) return;
+
+  const link = document.createElement("link");
+  link.id = cssId;
+  link.rel = "stylesheet";
+  link.href = rutaCSS;
+  document.head.appendChild(link);
+}
+
+// ================== Renderizar proyectos en la página de inicio ==================
 function renderizarProyectos() {
   const container = document.getElementById("proyectos-container");
   if (!container) return;
@@ -47,54 +148,8 @@ function renderizarProyectos() {
     container.appendChild(col);
   });
 }
-function cargarContenido(ruta) {
-  fetch(ruta)
-    .then(res => res.text())
-    .then(html => {
-      const temp = document.createElement("div");
-      temp.innerHTML = html;
 
-      const main = temp.querySelector("main");
-      const contenido = document.getElementById("contenido");
-      contenido.innerHTML = main ? main.outerHTML : html;
-
-      aplicarModoAContenidoDinamico();
-
-      // ✅ Si es la página de inicio, renderizar proyectos
-      if (ruta.includes("inicio.html")) {
-        renderizarProyectos();
-      }
-
-      // ✅ Cargar el CSS según la clase del <main>
-      if (main && main.classList.length > 0) {
-        const clase = main.classList[0]; // ejemplo: "paginaestatica"
-        cargarCSSDinamico(clase, ruta);
-      }
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    })
-    .catch(err => console.error("Error al cargar el contenido:", err));
-}
-
-
-function cargarCSSDinamico(clase) {
-  const cssId = "css-dinamico";
-  const cssAnterior = document.getElementById(cssId);
-  if (cssAnterior) cssAnterior.remove();
-
-  const rutaCSS = estilosPorPagina[clase];
-  if (!rutaCSS) return; // No hay estilo definido para esa clase
-
-  const link = document.createElement("link");
-  link.id = cssId;
-  link.rel = "stylesheet";
-  link.href = rutaCSS;
-  document.head.appendChild(link);
-}
-
-
-
-// Aplica modo claro/oscuro al contenido cargado
+// ================== Modo claro/oscuro ==================
 function aplicarModoAContenidoDinamico() {
   const contenido = document.getElementById("contenido");
   if (contenido) {
@@ -106,63 +161,27 @@ function aplicarModoAContenidoDinamico() {
   }
 }
 
-// Mensaje de contacto
-function enviarMensaje() {
-  const nombre = document.getElementById("nombre").value;
-  alert(`Gracias por tu mensaje, ${nombre}!`);
-}
-
-// Modo claro/oscuro
-const toggleBtn = document.getElementById("modoToggle");
-const body = document.body;
-
 function toggleModo() {
-  const esClaro = body.classList.toggle("modo-claro");
+  const esClaro = document.body.classList.toggle("modo-claro");
   localStorage.setItem("modo", esClaro ? "claro" : "oscuro");
-  toggleBtn.textContent = esClaro ? "Modo Oscuro" : "Modo Claro";
+  document.getElementById("modoToggle").textContent = esClaro ? "Modo Oscuro" : "Modo Claro";
   aplicarModoAContenidoDinamico();
 }
 
 function aplicarModoGuardado() {
   const modoGuardado = localStorage.getItem("modo");
   const esClaro = modoGuardado === "claro";
-  body.classList.toggle("modo-claro", esClaro);
-  toggleBtn.textContent = esClaro ? "Modo Oscuro" : "Modo Claro";
+  document.body.classList.toggle("modo-claro", esClaro);
+  document.getElementById("modoToggle").textContent = esClaro ? "Modo Oscuro" : "Modo Claro";
   aplicarModoAContenidoDinamico();
 }
 
-// Evento DOM cargado
+// ================== Evento principal ==================
 document.addEventListener("DOMContentLoaded", () => {
   aplicarModoGuardado();
-
-  // Construye el submenú dinámico
-  const submenuProyectos = [
-    { nombre: "Página Estática", enlace: "pages/paginaestatica/paginaestatica.html" },
-    { nombre: "API JWT", enlace: "pages/api.html" },
-    { nombre: "Compilador", enlace: "pages/compilador.html" },
-    { nombre: "Robot Arduino", enlace: "pages/robot.html" }
-  ];
-
-  const submenuContainer = document.getElementById("submenu-proyectos");
-
-  submenuProyectos.forEach(p => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.className = "dropdown-item";
-    a.href = "#";
-    a.textContent = p.nombre;
-
-    a.addEventListener("click", (e) => {
-      e.preventDefault();
-      cargarContenido(p.enlace);
-    });
-
-    li.appendChild(a);
-    submenuContainer.appendChild(li);
-  });
-
-  // Carga por defecto el inicio
+  construirSubmenuProyectos(); // <-- Aquí se crea el menú al cargar la app
   cargarContenido("pages/inicio.html");
 });
 
-toggleBtn.addEventListener("click", toggleModo);
+
+document.getElementById("modoToggle").addEventListener("click", toggleModo);
