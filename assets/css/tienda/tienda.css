@@ -1,0 +1,263 @@
+
+.paginaestatica h2,
+.paginaestatica h3,
+.paginaestatica h4,
+.paginaestatica h5,
+.paginaestatica h6,
+.paginaestatica span,
+.paginaestatica p,
+.paginaestatica strong,
+.paginaestatica a,
+.paginaestatica button,
+.paginaestatica label {
+  font-family: sans-serif;
+}
+
+.paginaestatica {
+  margin: 0;
+  padding: 0;
+}
+
+.paginaestatica h2,
+.paginaestatica h3,
+.paginaestatica h4,
+.paginaestatica h5,
+.paginaestatica h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.paginaestatica #encabezado-logo,
+.paginaestatica #logodiv {
+  background-color: #f6f9f9;
+}
+
+.paginaestatica #logodiv {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.paginaestatica #logoimg {
+  display: block;
+}
+
+.paginaestatica header {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(/Strict-assets/bg-header.jpg);
+  background-size: cover;
+}
+
+.paginaestatica .info-header {
+  width: 640px;
+  text-align: center;
+}
+
+.paginaestatica .info-header h2 {
+  font-size: 115px;
+  color: white;
+}
+
+.paginaestatica hr {
+  border-color: #15a4fa;
+}
+
+.paginaestatica .info-header p {
+  color: white;
+}
+
+.paginaestatica button {
+  background-color: transparent;
+  border: 1px solid #15a4fa;
+  padding: 18px 35px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+}
+
+.paginaestatica #simple {
+  background-color: #f6f9f9;
+  padding: 100px 0;
+}
+
+.paginaestatica .contenedor {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.paginaestatica .contenedor h3 {
+  font-size: 40px;
+  color: #2d3950;
+}
+
+.paginaestatica .contenedor p {
+  color: #999;
+}
+
+.paginaestatica #servicios {
+  padding: 90px 0;
+}
+
+.paginaestatica .contenedor-servicios {
+  display: flex;
+  width: 1100px;
+  margin: 0 auto;
+  padding: 90px 0;
+  text-align: center;
+}
+
+.paginaestatica .caja-servicio {
+  width: 33.3333333%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.paginaestatica .caja-servicio img {
+  margin-bottom: 15px;
+}
+
+.paginaestatica .caja-servicio h5 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #2d3950;
+}
+
+.paginaestatica .caja-servicio span {
+  color: #999;
+}
+
+.paginaestatica .encabezado {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.paginaestatica .encabezado h2 {
+  color: #2d3950;
+  font-size: 40px;
+}
+
+.paginaestatica .encabezado span {
+  color: #999;
+}
+
+.paginaestatica #showcase {
+  background-color: #f6f9f9;
+  padding: 90px 0;
+}
+
+.paginaestatica .contenedor-galeria {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.paginaestatica .caja-galeria {
+  width: 33.333333%;
+  padding: 0 10px;
+}
+
+.paginaestatica .caja-galeria img {
+  display: block;
+  width: 100%;
+}
+
+.paginaestatica .fila {
+  display: flex;
+  margin-bottom: 7px;
+}
+
+.paginaestatica #stay {
+  padding: 90px 0;
+}
+
+.paginaestatica .contenedor-stay {
+  width: 1100px;
+  margin: 0 auto;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.paginaestatica .encabezado {
+  margin-bottom: 20px;
+}
+
+.paginaestatica .encabezado h2 {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+.paginaestatica .encabezado span {
+  color: #999;
+}
+
+.paginaestatica .form-input {
+  width: 100%;
+  padding: 18px 10px;
+  background-color: transparent;
+  border: 1px solid #999;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  color: #999;
+}
+
+.paginaestatica .con-check {
+  display: flex;
+}
+
+.paginaestatica .check {
+  width: 70%;
+}
+
+.paginaestatica .btn {
+  width: 30%;
+}
+
+.paginaestatica #contacto {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.paginaestatica label {
+  color: white;
+}
+
+.paginaestatica .footer {
+  padding: 30px 0;
+}
+
+.paginaestatica .con-footer {
+  display: flex;
+  width: 600px;
+  margin: 0 auto;
+  padding: 100px 0;
+  text-align: center;
+  align-items: center;
+}
+
+.paginaestatica .redes-sociales {
+  width: 40%;
+  text-align: right;
+}
+
+.paginaestatica .redes-sociales a {
+  background-color: #15a4fa;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.paginaestatica .redes-sociales a i {
+  color: white;
+}
+
+

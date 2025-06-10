@@ -21,6 +21,11 @@ const proyectos = [
     enlace: "#"
   }
 ];
+const estilosPorPagina = {
+  tienda: "assets/css/tienda/tienda.css",
+  otro: "assets/css/"
+};
+
 
 // Renderiza los proyectos si el contenedor existe
 function renderizarProyectos() {
@@ -42,27 +47,52 @@ function renderizarProyectos() {
     container.appendChild(col);
   });
 }
-
-// Carga contenido dinámico
 function cargarContenido(ruta) {
   fetch(ruta)
     .then(res => res.text())
     .then(html => {
       const temp = document.createElement("div");
       temp.innerHTML = html;
+
       const main = temp.querySelector("main");
-      if (main) {
-        document.getElementById("contenido").innerHTML = main.outerHTML;
-      } else {
-        document.getElementById("contenido").innerHTML = html;
-      }
+      const contenido = document.getElementById("contenido");
+      contenido.innerHTML = main ? main.outerHTML : html;
 
       aplicarModoAContenidoDinamico();
-      if (ruta.includes("inicio.html")) renderizarProyectos();
+
+      // ✅ Si es la página de inicio, renderizar proyectos
+      if (ruta.includes("inicio.html")) {
+        renderizarProyectos();
+      }
+
+      // ✅ Cargar el CSS según la clase del <main>
+      if (main && main.classList.length > 0) {
+        const clase = main.classList[0]; // ejemplo: "paginaestatica"
+        cargarCSSDinamico(clase, ruta);
+      }
+
       window.scrollTo({ top: 0, behavior: "smooth" });
     })
     .catch(err => console.error("Error al cargar el contenido:", err));
 }
+
+
+function cargarCSSDinamico(clase) {
+  const cssId = "css-dinamico";
+  const cssAnterior = document.getElementById(cssId);
+  if (cssAnterior) cssAnterior.remove();
+
+  const rutaCSS = estilosPorPagina[clase];
+  if (!rutaCSS) return; // No hay estilo definido para esa clase
+
+  const link = document.createElement("link");
+  link.id = cssId;
+  link.rel = "stylesheet";
+  link.href = rutaCSS;
+  document.head.appendChild(link);
+}
+
+
 
 // Aplica modo claro/oscuro al contenido cargado
 function aplicarModoAContenidoDinamico() {
