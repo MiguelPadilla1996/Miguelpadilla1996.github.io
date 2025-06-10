@@ -1,0 +1,35 @@
+
+    <main class="encriptador">
+        <section class="contenedor-datos">
+          <article class="texto">
+            <input id="input" class="input" name="text" type="text" placeholder="Ingresa un mensaje" >
+            <p class="texto-error">El campo no puede llevar acentos ni Mayusculas ni simbolos y no puede estar vacio.</p>
+          </article>
+          <article class="grupo-de-botones">
+            <div class="alerta">
+              <img src="assets/img/imagenes/exlamation.svg" class="info-icono" alt="icono">
+              <p class="text">Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="diseño-btns">
+              <button id="encriptar"  class="boton encriptar disab"> Encriptar</button>
+              <button id="descriptar"  class="boton desencriptar disab">  Desencriptar</button>
+            </div>
+          </article>
+        </section>
+        <section class="salida">
+          <article class="mensaje-carta" id="mensaje-carta">
+            <div class="carta" id="carta">
+              <img class="message-img" src="assets/img/imagenes/Muñeco.svg" alt="mensaje"> 
+              <h4 class="titulo-mensaje">Ningún mensaje fue encontrado
+              <p class="descripción">Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+          </article>
+    
+          <article class="mensaje" id="respuesta">
+            <p class="mensaje-respuesta" id="mensaje-respuesta"></p>
+            <button class="boton boton-copiar" id="copiar">Copiar</button>
+
+          </article>
+    
+        </section>
+      </main>

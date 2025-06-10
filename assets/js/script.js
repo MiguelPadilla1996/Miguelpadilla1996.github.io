@@ -26,7 +26,8 @@ const proyectos = [
 const estilosPorPagina = {
   paginaestatica: "assets/css/tienda/tienda.css",
   acertar: "assets/css/acertar/acertar.css",
-  ahorcado: "assets/css/ahorcado/ahorcado.css"
+  ahorcado: "assets/css/ahorcado/ahorcado.css",
+  encriptador: "assets/css/encriptador/encriptador.css",
 };
 
 // ================== Submenú dinámico ==================
@@ -34,7 +35,7 @@ const submenuProyectos = [
   { nombre: "Página Estática", enlace: "pages/paginaestatica/paginaestatica.html" },
   { nombre: "Juego De Acertar", enlace: "pages/acertar/acertar.html" },
   { nombre: "Juego De Ahorcado", enlace: "pages/ahorcado/ahorcado.html" },
-  { nombre: "Robot Arduino", enlace: "pages/robot.html" }
+  { nombre: "Encriptador de Texto", enlace: "pages/encriptador/encriptador.html" }
 ];
 
 function construirSubmenuProyectos() {
@@ -102,7 +103,8 @@ function cargarScriptDinamico(clase) {
 
   const scriptsPorPagina = {
     acertar: ["assets/js/acertar.js"],
-    ahorcado: ["assets/js/ahorcado/palabras.js", "assets/js/ahorcado/ahorcado.js"]
+    ahorcado: ["assets/js/ahorcado/palabras.js", "assets/js/ahorcado/ahorcado.js"],
+    encriptador: ["assets/js/encriptador.js"],
   };
 
   const rutas = scriptsPorPagina[clase];
