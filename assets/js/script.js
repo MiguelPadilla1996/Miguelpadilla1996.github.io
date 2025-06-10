@@ -101,19 +101,22 @@ function cargarScriptDinamico(clase) {
   if (anterior) anterior.remove();
 
   const scriptsPorPagina = {
-    acertar: "assets/js/acertar.js",
-    ahorcado: "assets/js/ahorcado.js"
+    acertar: ["assets/js/acertar.js"],
+    ahorcado: ["assets/js/ahorcado/palabras.js", "assets/js/ahorcado/ahorcado.js"]
   };
 
-  const rutaScript = scriptsPorPagina[clase];
-  if (!rutaScript) return;
+  const rutas = scriptsPorPagina[clase];
+  if (!rutas) return;
 
-  const script = document.createElement("script");
-  script.id = scriptId;
-  script.src = rutaScript;
-  script.defer = true;
-  document.body.appendChild(script);
+  rutas.forEach((ruta, index) => {
+    const script = document.createElement("script");
+    script.id = index === rutas.length - 1 ? scriptId : `${scriptId}-${index}`;
+    script.src = ruta;
+    script.defer = true;
+    document.body.appendChild(script);
+  });
 }
+
 
 
 
