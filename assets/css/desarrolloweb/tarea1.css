@@ -1,0 +1,108 @@
+.main{
+    background-color: #FFF;
+    border-radius: 5px;
+    overflow: hidden;
+    line-height: 30px;
+}
+
+.content{
+    width: 70%;
+float: left;}
+
+
+.pageHeader{
+    background: #2BA6CB;
+    height: 40px;
+    line-height: 30px;
+    margin: 0 auto 30px auto;
+    text-align: center;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.pageHeader nav ul{
+    margin: 0 auto;
+}
+
+.pageHeader nav ul li{
+    float: left;
+    display: inline;
+}
+
+.pageHeader nav a:link, .pageHeader nav a:visited{
+    color: #fff;
+    display: inline-block;
+    height: 30px;
+    padding: 5px 23px;
+    text-decoration: none;
+}
+
+.pageHeader nav a:hover, .pageHeader nav a:active, .pageHeader nav .active a:link, .pageHeader nav .active a:visited{
+    background: #2795B6;
+    color: #fff;
+}
+
+.main{
+    overflow: hidden;
+    line-height: 30px;
+}
+
+.Top{
+    margin-bottom: 3%;
+}
+
+.content{
+    width: 70%;
+    float: left;
+}
+
+.top-sidebar{
+    width: 20%;
+    float: right;
+    margin-right: 2%;
+    padding: 2% 3%;
+    margin-bottom: 2%;
+}
+
+.navigation{
+    display:block;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0.875em 0;
+}
+
+.bottom-sidebar{
+    width: 20%;
+    float: left;
+    margin-right: 2%;
+    padding: 2% 3%;
+}
+
+.featured{
+    background: none repeat scroll 0 0 #F2F2F2;
+    border-color: #D9D9D9;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 1.25em;
+    padding: 1.25em;
+}
+
+.pageFooter{
+    width: 100%;
+    height: 40%;
+    line-height: 5px;
+    float: left;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: #2BA6CB;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    color: #fff;
+}
+
+.pageFooter p{
+  width: 90%;
+    margin: 2% auto;
+}

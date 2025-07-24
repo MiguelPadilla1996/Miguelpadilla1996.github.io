@@ -1,0 +1,80 @@
+<main class="tarea1">
+    <header class="pageHeader">
+        <nav>
+            <ul>
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="#">Noticia</a></li>
+                <li><a href="#">Acerca De</a></li>
+                <li><a href="#">Contactanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main">
+        <div class="content">
+            <article class="Top">
+                <header>
+                    <h2><a href="#">¿Que es HTML5?</a></h2>
+                </header>
+                <footer>
+                    <h5>
+                        <i>Esto fue posteado el 23/07/2025 por UMG-Guastatoya</i>
+                    </h5>
+                </footer>
+                <slot>
+                    <p>Durante los ultimos años, el estándar HTML5 se ha estado afinando en muchas páginas web. Sin
+                        embargo. ¿ que queremos decir con esto ? ¿Cúal es la diferencia crucial entre el HTML "común",
+                        por asi decirlo y este nuevo estándar? Hoy hablaremos sobre esto y responderemos a la pregunta
+                        de que es HTML5</p>
+                    <p>HTML5 es un lenguaje más semántico. En otras palabras, se dota de un significado a las diferentes
+                        partes de las páginas Web, de forma que el navegador puede distinguir la parte que forma parte
+                        de la cabecera gracias a que hay una etiqueta que dice "Cabecera", bueno lo dice en inglés:
+                        "header". ¿Para que sirve? Ayuda a los buscadores como Google a entender tu página Web, algo que
+                        se espera sea positivo de cara al SEO, y tambien sirve para que los navegadores muestren de
+                        forma inteligente diferentes versiones de la páginas Web sin tener que usar plug-ins para
+                        dispositivos especificos.</p>
+                </slot>
+            </article>
+            <article class="Bottom">
+                <header>
+                    <h2><a href="#">Introducción a CSS3</a></h2>
+                </header>
+                <footer>
+                    <h5><i>esto fue posteado el 23/07/2025 por UMG-Guastatoya</i></h5>
+                </footer>
+                <slot>
+                    <p>El nombre hojas de estilo en cascada viene del inglés Cascada Style Sheets, del que toma sus
+                        siglas. CSS es un lenguaje usado para definir la presentacion de un documento estructurado
+                        escrito en HTML O XML ( y por extensión en XHTML). El W3C(World Wide Web Consortium) es el
+                        encargado de formular la especificacion de las hojas de estilo que serviran de estandar para los
+                        agentes de usuario o navegadores</p>
+                    <p>Para que sirve CSS3?</p>
+                    <p>El CSS sirve para definir la estética de un sitio web en un documento externo y eso mismo permite que modificando ese documento ( la hoja CSS) podamos cambiar la estética entera de un sitio web, el mismo sitio web puede variar totalmente de estética cambiando solo CSS, sin tocar para nada los documentos HTML o jsp o asp que lo componen </p>
+                </slot>
+            </article>
+        </div>
+
+
+        <aside class="top-sidebar">
+            <h2>Navegación</h2>
+            <ul class="navigation">
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Noticias</a></li>
+                <li><a href="">Acerda De</a></li>
+                <li><a href="">Contactanos</a></li>>
+            </ul>
+        </aside>
+        <aside class="bottom-sidebar">
+            <div class="featured">
+                <h2>¿Que es y para que sirve JavaScript?</h2>
+                <p>JavaScript (JS) es un lenguaje ligero e interpretado, orientado a objetos con funciones de primera clase, más conocido como el lenguaje de script para páginas web, pero también usado en muchos entornos sin navegador, tales como nodejs.</p>
+                <a href="">Leer Más</a>
+            </div>
+        </aside>
+    </div>
+<footer class="pageFooter">
+      <p >
+    &copy; <span id="anio"></span> MiguelDev — Todos los derechos reservados.
+  </p>
+</footer>
+</main>
