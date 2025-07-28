@@ -28,7 +28,8 @@ const estilosPorPagina = {
   acertar: "assets/css/acertar/acertar.css",
   ahorcado: "assets/css/ahorcado/ahorcado.css",
   encriptador: "assets/css/encriptador/encriptador.css",
-  tarea1: "assets/css/desarrolloweb/tarea1.css"
+  tarea1: "assets/css/desarrolloweb/tarea1.css",
+  tareatienda: "assets/css/tareatienda/tareatienda.css"
 };
 
 // ================== Submenú dinámico ==================
@@ -37,7 +38,8 @@ const submenuProyectos = [
   { nombre: "Juego De Acertar", enlace: "pages/acertar/acertar.html" },
   { nombre: "Juego De Ahorcado", enlace: "pages/ahorcado/ahorcado.html" },
   { nombre: "Encriptador de Texto", enlace: "pages/encriptador/encriptador.html" },
-  { nombre: "Desarrollo Web", enlace: "pages/desarrolloweb/tarea1.html" }
+  { nombre: "Desarrollo Web", enlace: "pages/desarrolloweb/tarea1.html" },
+  { nombre: "Tarea Tienda", enlace: "pages/tareatienda/tareatienda.html" }
 ];
 
 function construirSubmenuProyectos() {
