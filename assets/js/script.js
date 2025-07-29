@@ -109,6 +109,7 @@ function cargarScriptDinamico(clase) {
     acertar: ["assets/js/acertar.js"],
     ahorcado: ["assets/js/ahorcado/palabras.js", "assets/js/ahorcado/ahorcado.js"],
     encriptador: ["assets/js/encriptador.js"],
+    tareatienda: ["assets/js/tareatienda/tareatienda.js"],
   };
 
   const rutas = scriptsPorPagina[clase];
