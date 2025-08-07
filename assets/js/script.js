@@ -29,7 +29,8 @@ const estilosPorPagina = {
   ahorcado: "assets/css/ahorcado/ahorcado.css",
   encriptador: "assets/css/encriptador/encriptador.css",
   tarea1: "assets/css/desarrolloweb/tarea1.css",
-  tareatienda: "assets/css/tareatienda/tareatienda.css"
+  tareatienda: "assets/css/tareatienda/tareatienda.css",
+  purificadora: "assets/css/purificadora/purificadora.css"
 };
 
 // ================== Submenú dinámico ==================
@@ -39,7 +40,8 @@ const submenuProyectos = [
   { nombre: "Juego De Ahorcado", enlace: "pages/ahorcado/ahorcado.html" },
   { nombre: "Encriptador de Texto", enlace: "pages/encriptador/encriptador.html" },
   { nombre: "Desarrollo Web", enlace: "pages/desarrolloweb/tarea1.html" },
-  { nombre: "Tarea Tienda", enlace: "pages/tareatienda/tareatienda.html" }
+  { nombre: "Tarea Tienda", enlace: "pages/tareatienda/tareatienda.html" },
+  { nombre: "Purificadora", enlace: "pages/purificadora/purificadora.html" }
 ];
 
 function construirSubmenuProyectos() {
@@ -110,6 +112,7 @@ function cargarScriptDinamico(clase) {
     ahorcado: ["assets/js/ahorcado/palabras.js", "assets/js/ahorcado/ahorcado.js"],
     encriptador: ["assets/js/encriptador.js"],
     tareatienda: ["assets/js/tareatienda/tareatienda.js"],
+    
   };
 
   const rutas = scriptsPorPagina[clase];
