@@ -52,6 +52,26 @@
     }
   }
 
+  async function cargarCategorias() {
+    try {
+      const response = await fetch('https://backcvbgtmdesa.azurewebsites.net/api/categorias');
+      const categorias = await response.json();
+console.log(categorias);
+      const categoriasList = document.getElementById('categorias');
+      categoriasList.innerHTML = ''; // Limpiar la lista
+
+      categorias.forEach(categoria => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="#" class="text-decoration-none">${categoria.descripcion}</a>`;
+        categoriasList.appendChild(li);
+      });
+
+    } catch (error) {
+      console.error('Error al cargar las categorías:', error);
+    }
+  }
+
   // Ejecutar al cargar la página
  cargarProductos();
 
+ cargarCategorias();
