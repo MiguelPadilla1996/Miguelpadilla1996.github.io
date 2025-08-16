@@ -63,7 +63,7 @@
       categorias.forEach(categoria => {
         const li = document.createElement('li');
         li.className = 'bi bi-bag nav-item';
-        li.innerHTML = `<a href="#" class="text-decoration-none"> ${categoria.descripcion}</a>`;
+        li.innerHTML = `<a href="http://127.0.0.1:5501/index.html?categoria=${categoria.id_categoria}" class="text-decoration-none"> ${categoria.descripcion}</a>`;
         categoriasList.appendChild(li);
       });
 
