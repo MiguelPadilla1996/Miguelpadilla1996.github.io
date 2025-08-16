@@ -56,14 +56,14 @@
     try {
       const response = await fetch('https://backcvbgtmdesa.azurewebsites.net/api/categorias');
       const categorias = await response.json();
-console.log(categorias);
+
       const categoriasList = document.getElementById('categorias');
       categoriasList.innerHTML = ''; // Limpiar la lista
 
       categorias.forEach(categoria => {
         const li = document.createElement('li');
-        li.className = 'bi bi-bag';
-        li.innerHTML = `<a href="#" class="text-decoration-none">${categoria.descripcion}</a>`;
+        li.className = 'bi bi-bag nav-item';
+        li.innerHTML = `<a href="#" class="text-decoration-none"> ${categoria.descripcion}</a>`;
         categoriasList.appendChild(li);
       });
 
@@ -72,7 +72,32 @@ console.log(categorias);
     }
   }
 
+async function cargarBanner(){
+  try {
+    const response = await fetch('https://backcvbgtmdesa.azurewebsites.net/api/productos');
+    const productos = await response.json();
+    console.log(productos);
+
+    const bannerContainer = document.getElementById('carousel');
+    bannerContainer.innerHTML = ''; // Limpiar el contenedor
+
+    const img = document.createElement('img');
+    productos.forEach(producto => {
+      img.src = producto.Imagen;
+      img.alt = producto.Descripcion;
+    });
+
+    img.className = 'img-fluid';
+    bannerContainer.appendChild(img);
+
+  } catch (error) {
+    console.error('Error al cargar el banner:', error);
+  }
+}
+
   // Ejecutar al cargar la página
  cargarProductos();
 
  cargarCategorias();
+
+ cargarBanner();
