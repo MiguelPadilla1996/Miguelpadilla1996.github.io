@@ -41,7 +41,8 @@ const submenuProyectos = [
   { nombre: "Encriptador de Texto", enlace: "pages/encriptador/encriptador.html" },
   { nombre: "Desarrollo Web", enlace: "pages/desarrolloweb/tarea1.html" },
   { nombre: "Tarea Tienda", enlace: "pages/tareatienda/tareatienda.html" },
-  { nombre: "Purificadora", enlace: "pages/purificadora/purificadora.html" }
+  { nombre: "Purificadora", enlace: "pages/purificadora/purificadora.html" },
+  { nombre: "Primer Parcial", enlace: "pages/primerparcial/primerparcial.html" }
 ];
 
 function construirSubmenuProyectos() {
@@ -112,6 +113,7 @@ function cargarScriptDinamico(clase) {
     ahorcado: ["assets/js/ahorcado/palabras.js", "assets/js/ahorcado/ahorcado.js"],
     encriptador: ["assets/js/encriptador.js"],
     tareatienda: ["assets/js/tareatienda/tareatienda.js"],
+    primerparcial: ["assets/js/primerparcial.js"],
     
   };
 
